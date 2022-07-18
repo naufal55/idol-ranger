@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="test" sid="392352314222518" static="0" type="text"></variable>
+        <variable constant="0" name="index" sid="423235229120246" static="0" type="number">0</variable>
+        <event-block sid="516411967827360">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="205515804106002" type="System" />
+            </conditions>
+            <actions>
+                <action id="1" name="Request project file" sid="195380886685059" type="AJAX">
+                    <param id="0" name="Tag">&quot;getData&quot;</param>
+                    <param id="1" name="File">dataFile.json</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="929045035659209" type="markSpawnEnemey">
+                    <param id="0" name="Object">enemy</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="193768549692685" type="enemy">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action id="8" name="Set flipped" sid="757002242727612" type="enemy">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="636177592693384" type="enemy">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="297614387028354" type="player">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="2" name="Set at X" sid="443815997691208" type="hero">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="2" name="Set at X" sid="577070384223487" type="hero">
+                    <param id="0" name="X">2</param>
+                    <param id="1" name="Value">4</param>
+                </action>
+                <action id="2" name="Set at X" sid="670743779708352" type="hero">
+                    <param id="0" name="X">3</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="2" name="Set at X" sid="858843126560773" type="hero">
+                    <param id="0" name="X">4</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="2" name="Set at X" sid="449206104488854" type="hero">
+                    <param id="0" name="X">5</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="563359283267096">
+            <conditions>
+                <condition id="0" name="On completed" sid="673830266582395" type="AJAX">
+                    <param id="0" name="Tag">&quot;getData&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="11" name="Load" sid="129177962848318" type="listCharacter">
+                    <param id="0" name="JSON">AJAX.LastData</param>
+                </action>
+                <action disabled="1" id="0" name="Set text" sid="604493904396287" type="label">
+                    <param id="0" name="Text">&quot;P&quot;&amp;listCharacter.At(0,5,0)&amp;1</param>
+                </action>
+                <action id="-9" name="Set value" sid="344104823028686" type="System">
+                    <param id="0" name="Variable">test</param>
+                    <param id="1" name="Value">listCharacter.At(0,0)</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="261080053920439" type="UI_Player">
+                    <param id="0" name="Object">player</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="446123472371417">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="672200517606447" type="player">
+                    <param id="0" name="Object">brownTiles</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="386319074162996">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="472640915873895" type="brownTiles">
+                            <param id="0" name="Instance variable">blok</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;end&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="346889882085967" type="player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="112530707359578" type="player">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="598331357557046">
+            <conditions>
+                <condition id="9" name="Is overlapping at offset" sid="536697815756799" type="player">
+                    <param id="0" name="Object">enemy</param>
+                    <param id="1" name="Offset X">180</param>
+                    <param id="2" name="Offset Y">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="389268466487993" type="player">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="855621364401245" type="player">
+                    <param id="0" name="Animation">&quot;hit&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="506954609279016">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="851962324311848" type="enemy">
+                    <param id="0" name="Object">player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="575166560812827" type="enemy">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="237457273897284" type="enemy">
+                    <param id="0" name="Animation">&quot;hit&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>DITAMBAHAKN LOOPINDEX-1 KARNA LOOP DIMULAI DARI 0 DAN DATA AARRAY MULAI DARI 1</comment>
+        <event-block sid="911863288278647">
+            <conditions>
+                <condition id="-11" name="For Each" sid="240916371953201" type="System">
+                    <param id="0" name="Object">player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="190462806013527" type="player">
+                    <param id="0" name="Instance variable">anim</param>
+                    <param id="1" name="Value">hero.At(loopindex)</param>
+                </action>
+                <action id="-9" name="Set value" sid="783789981901994" type="System">
+                    <param id="0" name="Variable">index</param>
+                    <param id="1" name="Value">loopindex</param>
+                </action>
+                <action id="4" name="Set animation" sid="283776454622072" type="player">
+                    <param id="0" name="Animation">&quot;P&quot;&amp;listCharacter.At(0,loopindex-1,0)&amp;1</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

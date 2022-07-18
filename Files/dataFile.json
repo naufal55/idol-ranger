@@ -1,0 +1,37 @@
+{
+    "//size mencakupi": "nama, jumlah HP, distance",
+    "c2array": true,
+    "size": [
+      2,
+      10,
+      2
+    ],
+    "//data mencakupi": "nama, jumlah HP, distance",
+    "data": [
+      [
+        [
+          "Gita",100,180
+        ],
+        [
+          "Cinhap",100,180
+        ],
+        [
+          "Feni",100,180
+        ],
+        [
+          "Gracia",100,180
+        ],
+        [
+          "Jinan",100,180
+        ]
+      ],
+      [
+        [
+          "Skeleton",100,0
+        ],
+        [
+          "Orc",100,0
+        ]
+      ]
+    ]
+  }

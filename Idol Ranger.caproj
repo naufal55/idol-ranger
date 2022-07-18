@@ -1,0 +1,1564 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Idol Ranger</name>
+    <description>Game Idol Ranger</description>
+    <version>1.0.0.0</version>
+    <author>Muhammad Naufal</author>
+    <author-email>idmuqolis@gmail.com</author-email>
+    <author-website>http://</author-website>
+    <app-id>com.idmuqolis.idolranger</app-id>
+    <unique-id>2m2oqhlgof90t</unique-id>
+    <saved-with-version>28000</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>896</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Scale outer</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="env">
+            <object-type name="tiles" sid="670482499599912">
+                <plugin id="TiledBg" />
+                <texture original-source="C:\Users\ASUS\Downloads\Assets Idol\Arena\32x32_map_tile v3.1 [MARGINLESS].png" />
+            </object-type>
+            <object-type name="tilesBattle" sid="690920410333837">
+                <plugin id="TiledBg" />
+                <texture original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Arena\32x32_map_tile v1.1_0.png" />
+            </object-type>
+            <object-type name="brownTiles" sid="508725427749872">
+                <plugin id="TiledBg" />
+                <instance-variables>
+                    <instance-variable name="blok" sid="446202851060765" type="string" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Solid" sid="726040735283432">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Arena\32x32_map_tile v3.1 [MARGINLESS].png" />
+            </object-type>
+            <object-type name="House" sid="703238776190117">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="411231276979903" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.502183" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Arena\House.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="hedge" sid="350654416295347">
+                <plugin id="TiledBg" />
+                <texture original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Arena\pagar.png" />
+            </object-type>
+            <object-type name="spawnMark" sid="342141427674627">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="point" sid="673419422475028" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="486651335166835" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Arena\spawn.png">
+                            <collision-poly>
+                                <point x="0.2" y="0.272727" />
+                                <point x="0.8" y="0.272727" />
+                                <point x="0.8" y="0.818182" />
+                                <point x="0.2" y="0.818182" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="markSpawnEnemey" sid="264772119553588">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="point" sid="736772493571843" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="701578195645979" speed="5">
+                        <frame duration="1" hotspotX="0.514286" hotspotY="0.513514" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="UI_Player" sid="819441419585729">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="984209674907509" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Arena\UI_Char.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="char">
+            <object-folder name="player">
+                <object-type name="player" sid="247251770163247">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="anim" sid="170800485348191" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Bullet" sid="128524679051688">
+                            <behavior id="Bullet" />
+                        </behavior-type>
+                        <behavior-type name="DragDrop" sid="657777360149766">
+                            <behavior id="DragnDrop" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation-folder name="Gita">
+                            <animation framecount="1" loop="1" name="PGita1" pingpong="0" repeatcount="1" repeatto="0" sid="791788077072857" speed="7">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="9" loop="1" name="walkGita1" pingpong="0" repeatcount="1" repeatto="0" sid="849740818126441" speed="7">
+                                <frame duration="1" hotspotX="0.555556" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.538462" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.84615" y="0.510204" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.538462" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.84615" y="0.510204" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.606061" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.84848" y="0.510204" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.684211" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.84211" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.657895" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.84211" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.684211" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.84211" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.612903" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.83871" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.538462" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.84615" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="8" loop="1" name="hitGita1" pingpong="0" repeatcount="1" repeatto="0" sid="532252413882362" speed="7">
+                                <frame duration="1" hotspotX="0.621622" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download2971.png">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.547619" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.85714" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.581395" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.86047" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.571429" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.85714" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.435897" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.84615" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.4" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.85" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.461538" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.84615" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.634146" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\1.gita\Download93413.png">
+                                    <image-point name="mark" x="1.85366" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                        <animation-folder name="Cinhap">
+                            <animation framecount="1" loop="0" name="PCinhap1" pingpong="0" repeatcount="1" repeatto="0" sid="466905739170383" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\2.Cinhap\Download23909.png">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="9" loop="1" name="walkCinhap1" pingpong="0" repeatcount="1" repeatto="0" sid="793436812806486" speed="7">
+                                <frame duration="1" hotspotX="0.518519" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.518519" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.518519" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.518519" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.518519" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.517241" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.518519" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.518519" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.518519" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="13" loop="1" name="hitCinhap1" pingpong="0" repeatcount="1" repeatto="0" sid="495526127189672" speed="7">
+                                <frame duration="1" hotspotX="0.37037" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.465116" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.348837" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.347826" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.333333" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.285714" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.291667" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.340426" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.391304" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.405405" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.388889" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.405405" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.341463" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                        <animation-folder name="Feni">
+                            <animation framecount="1" loop="0" name="PFeni1" pingpong="0" repeatcount="1" repeatto="0" sid="871222778598397" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\3.Feni\Download89220.png">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="9" loop="1" name="walkFeni1" pingpong="0" repeatcount="1" repeatto="0" sid="747921413919450" speed="7">
+                                <frame duration="1" hotspotX="0.382353" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.52" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.517241" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="6" loop="1" name="hitFeni1" pingpong="0" repeatcount="1" repeatto="0" sid="672647605983591" speed="7">
+                                <frame duration="1" hotspotX="0.352941" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.352941" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.333333" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.282609" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.288889" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                        <animation-folder name="Gracia">
+                            <animation framecount="1" loop="0" name="PGracia1" pingpong="0" repeatcount="1" repeatto="0" sid="156596233986195" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\4.Gracia\Download20473.png">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="9" loop="1" name="walkGracia1" pingpong="0" repeatcount="1" repeatto="0" sid="549315898718301" speed="7">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.980769">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.354839" hotspotY="0.98">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.37931" hotspotY="0.979592" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\4.Gracia\walk.png">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.533333" hotspotY="0.98">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.548387" hotspotY="0.943396">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.617647" hotspotY="0.942308">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.59375" hotspotY="0.942308">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.482759" hotspotY="0.980392">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.448276" hotspotY="0.980392">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="8" loop="1" name="hitGracia1" pingpong="0" repeatcount="1" repeatto="0" sid="678963427528966" speed="7">
+                                <frame duration="1" hotspotX="0.5" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.361111" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.371429" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.333333" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.261905" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.25" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.323529" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.516129" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                        <animation-folder name="Jinan">
+                            <animation framecount="1" loop="0" name="PJinan1" pingpong="0" repeatcount="1" repeatto="0" sid="918231663896300" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Character\5.Jinan\Download86343.png">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="9" loop="1" name="walkJinan1" pingpong="0" repeatcount="1" repeatto="0" sid="902424558285567" speed="7">
+                                <frame duration="1" hotspotX="0.311111" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.470588" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.371429" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.371429" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.318182" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.441176" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.333333" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.302326" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.371429" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="6" loop="1" name="hitJinan1" pingpong="0" repeatcount="1" repeatto="0" sid="610910636433306" speed="7">
+                                <frame duration="1" hotspotX="0.325" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.282609" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.282609" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.40625" hotspotY="0.980769">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.309524" hotspotY="0.942308">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.288889" hotspotY="1">
+                                    <collision-poly>
+                                        <point x="0.18" y="0.18" />
+                                        <point x="0.5" y="0.04" />
+                                        <point x="0.82" y="0.18" />
+                                        <point x="0.92" y="0.5" />
+                                        <point x="0.8" y="0.8" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.16" y="0.84" />
+                                        <point x="0.12" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="enemy">
+                <object-type name="enemy" sid="391897184807596">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Bullet" sid="488110307941230">
+                            <behavior id="Bullet" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation-folder name="skeleton">
+                            <animation framecount="1" loop="0" name="idleSkeleton" pingpong="0" repeatcount="1" repeatto="0" sid="281584779676824" speed="7">
+                                <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="6" loop="1" name="hitSkeleton" pingpong="0" repeatcount="1" repeatto="0" sid="343445151361215" speed="7">
+                                <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.333333" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.192308" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.388889" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.596154" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.625" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="9" loop="1" name="walkSkeleton" pingpong="0" repeatcount="1" repeatto="0" sid="431377988577231" speed="7">
+                                <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.513514" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <image-point name="mark" x="-3" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.513514" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <image-point name="mark" x="-3" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <image-point name="mark" x="-3" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <image-point name="mark" x="-3" y="0.510204" />
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.514286" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <image-point name="mark" x="-3" y="0.5" />
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <image-point name="mark" x="-3" y="0.510204" />
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <image-point name="mark" x="-3" y="0.510204" />
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.512821" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\skeleton.png">
+                                    <image-point name="mark" x="-3" y="0.510204" />
+                                    <collision-poly>
+                                        <point x="0.444444" y="0.326531" />
+                                        <point x="0.5" y="0.0408163" />
+                                        <point x="0.888889" y="0.0816327" />
+                                        <point x="0.944444" y="0.489796" />
+                                        <point x="0.861111" y="0.897959" />
+                                        <point x="0.5" y="0.938776" />
+                                        <point x="0.166667" y="0.877551" />
+                                        <point x="0.444444" y="0.489796" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                        <animation-folder name="orc">
+                            <animation framecount="1" loop="0" name="idleOrc" pingpong="0" repeatcount="1" repeatto="0" sid="610572054080540" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\ASUS\Documents\Idol Ranger\Assets Idol\Enemy\orc.png">
+                                    <collision-poly>
+                                        <point x="0" y="0" />
+                                        <point x="1" y="1" />
+                                        <point x="1" y="1" />
+                                        <point x="1" y="1" />
+                                        <point x="1" y="1" />
+                                        <point x="0.0454545" y="1" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+        </object-folder>
+        <object-folder name="objects">
+            <object-type name="AJAX" sid="786411203729223">
+                <plugin id="AJAX" />
+            </object-type>
+            <object-type global="1" name="listCharacter" sid="462036473337524">
+                <plugin id="Arr" />
+                <instance-variables>
+                    <instance-variable name="isFilled" sid="642594394770911" type="boolean" />
+                </instance-variables>
+            </object-type>
+            <object-type global="1" name="hero" sid="543646578555928">
+                <plugin id="Arr" />
+            </object-type>
+        </object-folder>
+        <object-type name="label" sid="343791653727669">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="AJAX" uid="3" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+        <file-folder name="json">
+            <file name="dataFile.json" />
+        </file-folder>
+    </files-folder>
+</c2project>
