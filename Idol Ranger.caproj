@@ -15,6 +15,7 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -1531,6 +1532,9 @@
             <object-type global="1" name="hero" sid="543646578555928">
                 <plugin id="Arr" />
             </object-type>
+            <object-type name="Touch" sid="560807314005351">
+                <plugin id="Touch" />
+            </object-type>
         </object-folder>
         <object-type name="label" sid="343791653727669">
             <plugin id="Text" />
@@ -1545,6 +1549,11 @@
     </event-folder>
     <global-instances>
         <global-instance type="AJAX" uid="3" />
+        <global-instance type="Touch" uid="29">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder />
     <music-folder />
